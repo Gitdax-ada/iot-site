@@ -116,14 +116,25 @@ async function checkDoorbell() {
   }
 }
 
-function showDoorbell(value, createdAt, flash) {
+if (buttons.update()) {
+  if (buttons.isPressed('A')) {
+    publishValue("A");
+  }
+  if (buttons.isPressed('B')) {
+    publishValue("B");
+  }
+  if (buttons.isPressed('C')) {
+    publishValue("C");
+  }
+}
+  function showDoorbell(value, createdAt, flash) {
   const messages = {
     "A": "Someone is at the door!",
     "B": "Package delivery!",
     "C": "Time for dinner!"
   };
 
-  let message = "Button " + value + " was pressed";
+let message = messages[value] || "Button " + value + " was pressed";
 
   document.getElementById("doorbellStatus").textContent = message;
   document.getElementById("doorbellTime").textContent = "at " + new Date(createdAt).toLocaleTimeString();
