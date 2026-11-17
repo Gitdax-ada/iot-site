@@ -117,10 +117,12 @@ async function checkDoorbell() {
 }
 
 function showDoorbell(value, createdAt, flash) {
-  // ===== YOUR TURN =====
-  // Right now this just prints the raw value ("A"). Turn it into a real message:
-  //   "A" -> "Someone is at the door!"   "B" -> ...   "C" -> ...
-  // =====================
+  const messages = {
+    "A": "Someone is at the door!",
+    "B": "Package delivery!",
+    "C": "Time for dinner!"
+  };
+
   let message = "Button " + value + " was pressed";
 
   document.getElementById("doorbellStatus").textContent = message;
