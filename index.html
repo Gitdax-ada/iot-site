@@ -127,14 +127,14 @@ if (buttons.update()) {
     publishValue("C");
   }
 }
-  function showDoorbell(value, createdAt, flash) {
+function showDoorbell(value, createdAt, flash) {
   const messages = {
     "A": "Someone is at the door!",
     "B": "Package delivery!",
     "C": "Time for dinner!"
   };
 
-let message = messages[value] || "Button " + value + " was pressed";
+  let message = messages[value] || "Button " + value + " was pressed";
 
   document.getElementById("doorbellStatus").textContent = message;
   document.getElementById("doorbellTime").textContent = "at " + new Date(createdAt).toLocaleTimeString();
