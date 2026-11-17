@@ -149,17 +149,6 @@ function showDoorbell(value, createdAt, flash) {
   }
 }
 
-  document.getElementById("doorbellStatus").textContent = message;
-  document.getElementById("doorbellTime").textContent = "at " + new Date(createdAt).toLocaleTimeString();
-  document.getElementById("doorbellCount").textContent = count;
-
-  if (flash) {
-    const card = document.getElementById("cardA");
-    card.classList.remove("flash");
-    void card.offsetWidth;               // restart the animation
-    card.classList.add("flash");
-  }
-}
 
 /* =====================================================================
    PROJECT B - write to the lamp feed when a button is clicked
