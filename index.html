@@ -116,18 +116,6 @@ async function checkDoorbell() {
   }
 }
 
-if (buttons.update()) {
-  if (buttons.isPressed('A')) {
-    publishValue("A");
-  }
-  if (buttons.isPressed('B')) {
-    publishValue("B");
-  }
-  if (buttons.isPressed('C')) {
-    publishValue("C");
-  }
-}
-
 function showDoorbell(value, createdAt, flash) {
   const messages = {
     "A": "Someone is at the door!",
